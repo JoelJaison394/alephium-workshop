@@ -1,0 +1,26 @@
+{
+  "fullNodeVersion": "v3.6.3",
+  "compilerOptionsUsed": {
+    "ignoreUnusedConstantsWarnings": false,
+    "ignoreUnusedVariablesWarnings": false,
+    "ignoreUnusedFieldsWarnings": false,
+    "ignoreUnusedPrivateFunctionsWarnings": false,
+    "ignoreUpdateFieldsCheckWarnings": false,
+    "ignoreCheckExternalCallerWarnings": false,
+    "ignoreUnusedFunctionReturnWarnings": false
+  },
+  "infos": {
+    "IFungibleToken": {
+      "sourceFile": "..\\node_modules\\@alephium\\web3\\std\\fungible_token_interface.ral",
+      "sourceCodeHash": "62910bf11e1eeb6cb2fd468626ff606a9b06306b2b81590c3b10f6deb5966bde",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": ""
+    },
+    "MyToken": {
+      "sourceFile": "myToken.ral",
+      "sourceCodeHash": "5193a037d694cec9776711fe5d3b3b40cd420b3c7f6e229c09d3d1090aea7136",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "613776aec3bbdb7f6a5604e5bcbd789db49c3a4be0aff9f4fdd8d6404dc5f3ae"
+    }
+  }
+}

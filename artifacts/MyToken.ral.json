@@ -1,0 +1,59 @@
+{
+  "version": "v3.6.3",
+  "name": "MyToken",
+  "bytecode": "01040c1c4025402f010000000102140353746b0201000000010214074d79546f6b656e0201000000010213120201000000010213671002",
+  "codeHash": "613776aec3bbdb7f6a5604e5bcbd789db49c3a4be0aff9f4fdd8d6404dc5f3ae",
+  "fieldsSig": {
+    "names": [
+      "__stdInterfaceId"
+    ],
+    "types": [
+      "ByteVec"
+    ],
+    "isMutable": [
+      false
+    ]
+  },
+  "eventsSig": [],
+  "functions": [
+    {
+      "name": "getSymbol",
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getName",
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "getDecimals",
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    },
+    {
+      "name": "getTotalSupply",
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    }
+  ],
+  "constants": [],
+  "enums": [],
+  "stdInterfaceId": "0001"
+}
