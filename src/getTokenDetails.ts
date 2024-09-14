@@ -1,6 +1,7 @@
 import { PrivateKeyWallet } from "@alephium/web3-wallet";
 import * as alephium from "@alephium/web3";
 import { MY_PRIVATE_KEY } from "./config";
+import { NODE_URL } from './config';
 
 const nodeProvider = new alephium.NodeProvider(NODE_URL);
 

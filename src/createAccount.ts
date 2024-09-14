@@ -1,5 +1,6 @@
 import * as alephium from "@alephium/web3";
 import { PrivateKeyWallet } from '@alephium/web3-wallet'
+import { NODE_URL } from './config';
 
 
 (async () => {
