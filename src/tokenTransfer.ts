@@ -1,6 +1,6 @@
 import * as alephium from "@alephium/web3";
 import { PrivateKeyWallet } from '@alephium/web3-wallet'
-import { MY_PRIVATE_KEY } from "./config";
+import { EXPLORER_URL, MY_PRIVATE_KEY } from "./config";
 import { NODE_URL } from './config';
 
 const nodeProvider = new alephium.NodeProvider(NODE_URL);
@@ -57,6 +57,6 @@ async function getTokenBalance(address: string, tokenId: string) {
 
         Sender Balance After: ${senderAfterBalance} ${alephium.hexToString(metadata.symbol)}
         Receiver Balance After: ${receiverAfterBalance} ${alephium.hexToString(metadata.symbol)}
-        Transaction Link: https://testnet.alephium.org/transactions/${result.txId}
+        Transaction Link: ${EXPLORER_URL}/transactions/${result.txId}
     `);
 })();

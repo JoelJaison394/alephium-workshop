@@ -16,7 +16,7 @@ const configuration: Configuration<Settings> = {
             settings: {}
         }
         , testnet: {
-            nodeUrl: NODE_URL,
+            nodeUrl: 'https://node.testnet.alephium.org',
             privateKeys: [],
             settings: {}
         }

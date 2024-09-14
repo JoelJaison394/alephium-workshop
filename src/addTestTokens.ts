@@ -1,8 +1,10 @@
 import { PrivateKeyWallet } from "@alephium/web3-wallet";
 import * as alephium from "@alephium/web3";
-import { MY_PRIVATE_KEY } from "./config";
+import { EXPLORER_URL, MY_PRIVATE_KEY } from "./config";
 import { NODE_URL } from './config';
+import { testPrivateKey } from "@alephium/web3-test";
 
+const nodeProvider = new alephium.NodeProvider(NODE_URL);
 
 async function requestTestnetFaucet(address: string) {
     try {
@@ -14,7 +16,7 @@ async function requestTestnetFaucet(address: string) {
             }
         });
 
-        if(response.status === 429) {
+        if (response.status === 429) {
             // date & time in local timezone , add 5 minutes to the current time
             const newTime = new Date(new Date().getTime() + 5 * 60000);
             console.log(`Faucet is rate limited. Try again after ${newTime.toLocaleString()}`);
@@ -32,10 +34,25 @@ async function requestTestnetFaucet(address: string) {
     }
 }
 
+async function addLocalTokens(reciever: string) {
+    const wallet = new PrivateKeyWallet({ privateKey: testPrivateKey, nodeProvider });
+
+    const result = await wallet.signAndSubmitTransferTx(
+        {
+            signerAddress: wallet.address,
+            destinations: [{ address: reciever, attoAlphAmount: alephium.utils.convertAlphAmountWithDecimals(6)! }]
+        }
+    );
+
+    return result;
+
+}
+
 (async () => {
-    const nodeProvider = new alephium.NodeProvider(NODE_URL);
+    const wallet = new PrivateKeyWallet({ privateKey: MY_PRIVATE_KEY, nodeProvider });
 
-    const wallet = new PrivateKeyWallet({privateKey: MY_PRIVATE_KEY, nodeProvider});
+    const result = await addLocalTokens(wallet.address);
 
-    await requestTestnetFaucet(wallet.address);
+    console.log(`Faucet Request Successful: ${EXPLORER_URL}/transactions/${result.txId}`);
+
 })();
