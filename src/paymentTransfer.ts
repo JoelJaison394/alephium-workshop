@@ -1,16 +1,15 @@
 import * as alephium from "@alephium/web3";
 import { PrivateKeyWallet } from '@alephium/web3-wallet'
 import { EXPLORER_URL, MY_PRIVATE_KEY } from "./config";
-import { json } from "stream/consumers";
 import { NODE_URL } from './config';
 
 (async () => {
     const nodeProvider = new alephium.NodeProvider(NODE_URL);
     const wallet = new PrivateKeyWallet({ privateKey: MY_PRIVATE_KEY, nodeProvider });
 
-    const receiverAddress = "1Ht4UDeKvGKA8ZDPsjjo3cDaJ9qSvfACKGguBziMj3jY2";
+    const receiverAddress = "17xyrLQpXg3MudW9LoptjWFNN82rN2PiGRrA4cENvfQdZ";
 
-    const sendingAmount = 0.2;
+    const sendingAmount = 2;
 
     const senderBeforeBalance = alephium.utils.prettifyTokenAmount(
         (await nodeProvider.addresses.getAddressesAddressBalance(wallet.address)).balance, 18

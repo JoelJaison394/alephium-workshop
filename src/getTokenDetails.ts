@@ -15,7 +15,7 @@ async function getTokenBalance(address: string, tokenId: string) {
 
     const wallet = new PrivateKeyWallet({ privateKey: MY_PRIVATE_KEY, nodeProvider });
 
-    const tokenId = "10eeeb83509b8dacd8db04060e4e39eab339a407095d772793483d4932d25c00"
+    const tokenId = "2ec08fc1e48d81f49bab191aac551d011a84bb37399b602271845cc58048fd02"
 
     const metadata = await nodeProvider.fetchFungibleTokenMetaData(tokenId);
 
